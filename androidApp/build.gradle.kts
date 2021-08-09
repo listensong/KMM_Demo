@@ -40,26 +40,10 @@ tasks.withType<JavaCompile>() {
 
 dependencies {
     implementation(fileTree("dir" to "libs", "include" to arrayOf("*.jar")))
-    implementation(project(":shared"))
-    implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    implementation("androidx.activity:activity:1.3.0")
-    implementation("androidx.activity:activity-ktx:1.3.0")
-    implementation("androidx.lifecycle:lifecycle-process:2.3.1")
-
-    // implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
-    // implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version")
-    implementation("androidx.constraintlayout:constraintlayout:$constraint_layout_version")
-
-    implementation("io.ktor:ktor-client-android:$ktor_version")
-    implementation("io.ktor:ktor-client-okhttp:$ktor_version")
-    implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
-    implementation("io.ktor:ktor-client-logging-jvm:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization:$ktor_version")
+    implementation(project(":androidModules:common"))
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 
-    testImplementation(project(":tests:unitTests"))
-    androidTestImplementation(project(":tests:androidTests"))
+    testImplementation(project(":androidModules:unitTests"))
+    androidTestImplementation(project(":androidModules:androidTests"))
 }

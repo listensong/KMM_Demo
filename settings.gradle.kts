@@ -9,5 +9,6 @@ pluginManagement {
 rootProject.name = "KMM_Template"
 include(":androidApp")
 include(":shared")
-include(":tests:unitTests")
-include(":tests:androidTests")
+include(":androidModules:unitTests")
+include(":androidModules:androidTests")
+include(":androidModules:common")
