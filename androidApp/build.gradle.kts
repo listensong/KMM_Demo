@@ -1,27 +1,57 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-}
-
-dependencies {
-    implementation(project(":shared"))
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    kotlin("plugin.serialization")
+    id("kotlin-parcelize")
 }
 
 android {
-    compileSdkVersion(31)
+    compileSdk = compile_version
+    buildToolsVersion = build_tools_version
+
     defaultConfig {
         applicationId = "com.song.kmm.template.android"
-        minSdkVersion(21)
-        targetSdkVersion(31)
+        minSdk = min_sdk_version
+        targetSdk= target_sdk_version
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
-        getByName("release") {
+        val release by getting {
             isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
+
+    lint {
+        isCheckReleaseBuilds = false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        isAbortOnError = false
+    }
+}
+
+tasks.withType<JavaCompile>() {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    implementation(fileTree("dir" to "libs", "include" to arrayOf("*.jar")))
+    implementation(project(":shared"))
+    implementation("androidx.core:core-ktx:1.6.0")
+    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("androidx.lifecycle:lifecycle-process:2.3.1")
+
+    // implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    // implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+    // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version")
+    implementation("androidx.constraintlayout:constraintlayout:$constraint_layout_version")
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
+
+    testImplementation(project(":tests:unitTests"))
+    androidTestImplementation(project(":tests:androidTests"))
 }
