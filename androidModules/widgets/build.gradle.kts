@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("plugin.serialization")
     id("kotlin-parcelize")
@@ -7,16 +7,17 @@ plugins {
 
 android {
     compileSdk = compile_version
-    buildToolsVersion = build_tools_version
+    buildToolsVersion =build_tools_version
+    resourcePrefix = "widgets_"
 
     defaultConfig {
-        applicationId = "com.song.kmm.template.android"
         minSdk = min_sdk_version
-        targetSdk= target_sdk_version
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = target_sdk_version
+        // versionCode = 1
+        // versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,16 +35,9 @@ android {
     }
 }
 
-tasks.withType<JavaCompile>() {
-    options.encoding = "UTF-8"
-}
-
 dependencies {
-    implementation(fileTree("dir" to "libs", "include" to arrayOf("*.jar")))
+    //api fileTree(dir: "libs", include: ["*.jar"])
     implementation(project(":android_common"))
-    implementation(project(":android_widgets"))
-
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 
     testImplementation(project(":android_unitTests"))
     androidTestImplementation(project(":android_androidTests"))
