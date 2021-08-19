@@ -10,10 +10,9 @@ rootProject.name = "KMM_Template"
 include(":shared")
 
 // android modules configuration
-include(":androidApp")
-composeSubProject("androidModules", "android_")
+composePlatformModules("android", "android_")
 
-fun composeSubProject(subProjectDirName: String, modulePrefix: String) {
+fun composePlatformModules(subProjectDirName: String, modulePrefix: String) {
     File("./$subProjectDirName")
         .walk()
         .maxDepth(1)
