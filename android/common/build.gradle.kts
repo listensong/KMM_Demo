@@ -42,6 +42,8 @@ dependencies {
     api("androidx.appcompat:appcompat:1.3.1")
     api("androidx.activity:activity:1.3.1")
     api("androidx.activity:activity-ktx:1.3.1")
+    api("androidx.fragment:fragment:1.3.6")
+    api("androidx.fragment:fragment-ktx:1.3.6")
     api("androidx.lifecycle:lifecycle-process:2.3.1")
 
     // api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")

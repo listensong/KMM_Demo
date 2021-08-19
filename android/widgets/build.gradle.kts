@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("plugin.serialization")
     id("kotlin-parcelize")
+    id("kotlin-android")
 }
 
 android {
@@ -38,6 +39,9 @@ android {
 dependencies {
     //api fileTree(dir: "libs", include: ["*.jar"])
     implementation(project(":android_common"))
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
     testImplementation(project(":android_unitTests"))
     androidTestImplementation(project(":android_androidTests"))
