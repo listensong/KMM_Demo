@@ -42,6 +42,7 @@ dependencies {
     implementation(fileTree("dir" to "libs", "include" to arrayOf("*.jar")))
     implementation(project(":android_common"))
     implementation(project(":android_widgets"))
+    implementation(project(":android_wanandroid"))
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 

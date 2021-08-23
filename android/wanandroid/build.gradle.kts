@@ -8,8 +8,8 @@ plugins {
 
 android {
     compileSdk = compile_version
-    buildToolsVersion =build_tools_version
-    resourcePrefix = "widgets_"
+    buildToolsVersion = build_tools_version
+    resourcePrefix = "wan_"
 
     defaultConfig {
         minSdk = min_sdk_version
