@@ -1,0 +1,13 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="RippleTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@drawable/btn_raised_ripple</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/design_default_color_primary</item>
+    </style>
+</resources>

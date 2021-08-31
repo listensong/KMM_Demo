@@ -12,136 +12,73 @@
 
         <TextView
             android:id="@+id/tv_1"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/widgets_btn_raised_ripple"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:text="tv: 001"
+            style="@style/RippleTextStyle"
+            android:text="tv: 002"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_2"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/widgets_btn_raised_ripple_stroke"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 002"
             android:textColor="@color/design_default_color_primary" />
 
         <Button
             android:id="@+id/btn_1"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/widgets_btn_raised_ripple_solid"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="btn: 001"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_3"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 003"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_4"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 004"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_5"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 005"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_6"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 006"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_7"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 007"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_8"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 008"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_9"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 009"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_10"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 010"
             android:textColor="@color/design_default_color_primary" />
 
         <TextView
             android:id="@+id/tv_111"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
+            style="@style/RippleTextStyle"
             android:text="tv: 011"
             android:textColor="@color/design_default_color_primary" />
 

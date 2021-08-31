@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".WidgetActivity"
+            android:name=".home.WanMainActivity"
             android:exported="true" />
     </application>
 
