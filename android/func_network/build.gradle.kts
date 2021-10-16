@@ -3,11 +3,13 @@ plugins {
     kotlin("android")
     kotlin("plugin.serialization")
     id("kotlin-parcelize")
+    id("kotlin-android")
 }
 
 android {
     compileSdk = compile_version
     buildToolsVersion =build_tools_version
+    resourcePrefix = "network_"
 
     defaultConfig {
         minSdk = min_sdk_version
@@ -36,31 +38,15 @@ android {
 
 dependencies {
     //api fileTree(dir: "libs", include: ["*.jar"])
-    api(project(":shared"))
-    api(project(":android_func_network"))
-
-    api("androidx.core:core-ktx:1.6.0")
-    api("androidx.appcompat:appcompat:1.3.1")
-    api("androidx.activity:activity:1.3.1")
-    api("androidx.activity:activity-ktx:1.3.1")
-    api("androidx.fragment:fragment:1.3.6")
-    api("androidx.fragment:fragment-ktx:1.3.6")
-    api("androidx.lifecycle:lifecycle-process:2.3.1")
-    api("com.google.android.material:material:1.3.0")
-
-    // api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
-    // api("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    // api("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version")
-    api("androidx.constraintlayout:constraintlayout:$constraint_layout_version")
-
-    api("io.ktor:ktor-client-android:$ktor_version")
-    api("io.ktor:ktor-client-okhttp:$ktor_version")
-    api("io.ktor:ktor-client-json-jvm:$ktor_version")
-    api("io.ktor:ktor-client-logging-jvm:$ktor_version")
-    api("io.ktor:ktor-client-serialization:$ktor_version")
-
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
-
+    implementation("androidx.annotation:annotation:1.2.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.21")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1")
+    // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.7.1")
+    implementation("com.squareup.retrofit2:retrofit:2.7.1")
+    implementation("com.squareup.okhttp3:okhttp:4.6.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.3.0")
+    implementation("com.squareup.okio:okio:2.10.0")
     testImplementation(project(":android_unitTests"))
     androidTestImplementation(project(":android_androidTests"))
 }

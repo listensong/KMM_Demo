@@ -1,4 +1,4 @@
-const val android_gradle_plugin_version = "7.0.0"
+const val android_gradle_plugin_version = "7.0.2"
 const val ktor_version = "1.6.0"
 const val kotlin_version = "1.5.21"
 const val kotlin_coroutines_version = "1.5.1"
