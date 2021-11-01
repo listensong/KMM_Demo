@@ -13,31 +13,32 @@ class WidgetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.widgets_activity_widget)
-        jobNew = SafeCoroutineScope(Dispatchers.Main).launch {
-            Log.e("HelloWorld", "WidgetActivity " + this.coroutineContext)
-            // throw RuntimeException("JHejpjpaowief")
-            // delay(60000)
-            repeat(1000) {
-                Log.e("HelloWorld", "WidgetActivity action " + it)
-                delay(1000)
-            }
-            Log.e("HelloWorld", "WidgetActivity Done ")
-        }
-
-        GlobalScope.launch {
-            Log.e("HelloWorld", "GlobalScope " + this.coroutineContext)
-            // throw RuntimeException("JHejpjpaowief")
-            // delay(60000)
-            repeat(1000) {
-                Log.e("HelloWorld", "GlobalScope action " + it)
-                delay(1000)
-            }
-            Log.e("HelloWorld", "GlobalScope Done ")
-        }
-
-        jobNew?.invokeOnCompletion {
-            Log.e("HelloWorld", "WidgetActivity invokeOnCompletion")
-        }
+        FullScreenDialog.getInstance().show(supportFragmentManager)
+//        jobNew = SafeCoroutineScope(Dispatchers.Main).launch {
+//            Log.e("HelloWorld", "WidgetActivity " + this.coroutineContext)
+//            // throw RuntimeException("JHejpjpaowief")
+//            // delay(60000)
+//            repeat(1000) {
+//                Log.e("HelloWorld", "WidgetActivity action " + it)
+//                delay(1000)
+//            }
+//            Log.e("HelloWorld", "WidgetActivity Done ")
+//        }
+//
+//        GlobalScope.launch {
+//            Log.e("HelloWorld", "GlobalScope " + this.coroutineContext)
+//            // throw RuntimeException("JHejpjpaowief")
+//            // delay(60000)
+//            repeat(1000) {
+//                Log.e("HelloWorld", "GlobalScope action " + it)
+//                delay(1000)
+//            }
+//            Log.e("HelloWorld", "GlobalScope Done ")
+//        }
+//
+//        jobNew?.invokeOnCompletion {
+//            Log.e("HelloWorld", "WidgetActivity invokeOnCompletion")
+//        }
     }
 
     override fun onDestroy() {
