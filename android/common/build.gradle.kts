@@ -46,7 +46,7 @@ dependencies {
     api("androidx.fragment:fragment:1.3.6")
     api("androidx.fragment:fragment-ktx:1.3.6")
     api("androidx.lifecycle:lifecycle-process:2.3.1")
-    api("com.google.android.material:material:1.3.0")
+    api("com.google.android.material:material:1.4.0")
 
     // api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     // api("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")

@@ -5,7 +5,7 @@
     <application>
         <activity
             android:name="com.song.kmm.template.android.notes.MainActivity"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>

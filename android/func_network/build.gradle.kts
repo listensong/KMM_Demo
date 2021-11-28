@@ -39,9 +39,9 @@ android {
 dependencies {
     //api fileTree(dir: "libs", include: ["*.jar"])
     implementation("androidx.annotation:annotation:1.2.0")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.21")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1")
-    // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation("com.squareup.retrofit2:converter-gson:2.7.1")
     implementation("com.squareup.retrofit2:retrofit:2.7.1")
     implementation("com.squareup.okhttp3:okhttp:4.6.0")
