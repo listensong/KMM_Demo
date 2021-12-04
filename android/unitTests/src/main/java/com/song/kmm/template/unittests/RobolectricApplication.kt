@@ -7,6 +7,7 @@ import android.util.Log
  *  @author HelloWorld
  *  RobolectricApplication
  */
+@Suppress("unused")
 class RobolectricApplication : Application() {
     override fun onCreate() {
         super.onCreate()

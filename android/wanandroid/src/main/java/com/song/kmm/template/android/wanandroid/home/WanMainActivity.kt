@@ -1,8 +1,8 @@
 package com.song.kmm.template.android.wanandroid.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.song.kmm.template.android.wanandroid.R
 import com.song.kmm.template.android.wanandroid.api.WanApiService
@@ -25,7 +25,7 @@ class WanMainActivity : AppCompatActivity() {
                 Log.e("HelloWorld", "onFailure value " + it.error.description)
             }
             .onComplete {
-                Log.e("HelloWorld", "onComplete value " + it)
+                Log.e("HelloWorld", "onComplete value $it")
             }
             .call(lifecycleScope)
     }

@@ -2,4 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.song.kmm.template.android.common">
 
+    <application>
+        <provider
+            android:name=".KmmInnerProvider"
+            android:authorities="com.song.kmm.template.android.common.KmmInnerProvider"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
 </manifest>

@@ -7,6 +7,7 @@ import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlin.jvm.JvmStatic
 
+@Suppress("unused")
 class BaiduApiService private constructor() {
     private object Holder {
         val INSTANCE = BaiduApiService()

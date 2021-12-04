@@ -1,10 +1,9 @@
 package com.song.kmm.template.android.widgets
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.*
-import java.lang.RuntimeException
 import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.CoroutineContext
 
@@ -42,11 +41,15 @@ class WidgetActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        Log.e("HelloWorld", "WidgetActivity onDestroy " + jobNew?.isActive + " -> " + jobNew?.isCancelled + " ->" + jobNew?.isCompleted)
+        Log.e(
+            "HelloWorld",
+            "WidgetActivity onDestroy " + jobNew?.isActive + " -> " + jobNew?.isCancelled + " ->" + jobNew?.isCompleted
+        )
         super.onDestroy()
     }
 }
 
+@Suppress("unused")
 class SafeCoroutineScope(
     context: CoroutineContext,
     error: ((Throwable) -> Unit)? = null

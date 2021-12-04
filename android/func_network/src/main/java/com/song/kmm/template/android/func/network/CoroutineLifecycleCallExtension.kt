@@ -28,22 +28,14 @@ internal suspend fun <T : Any> CoroutineLifecycleCall<T>.awaitResult(): HttpResu
         }
 
         enqueue(object : CoroutineLifecycleCallback<T> {
-            override fun onFinish() {}
+            override fun onFinish() {
+                // nothing to do
+            }
 
             override fun onSuccess(statusCode: Int, response: Response<T>) {
                 cancellableContinuation.resumeWith(runCatching {
                     if (response.isSuccessful) {
-                        val body = response.body()
-                        if (body == null) {
-                            HttpResult.Error(
-                                NetworkError(
-                                    response.code(), response.message(),
-                                    NullPointerException("Response body is null")
-                                )
-                            )
-                        } else {
-                            HttpResult.Okay(body, response.raw())
-                        }
+                        processSuccessfulResponse(response)
                     } else {
                         HttpResult.Error(
                             NetworkError(
@@ -67,6 +59,20 @@ internal suspend fun <T : Any> CoroutineLifecycleCall<T>.awaitResult(): HttpResu
                 )
             }
         })
+    }
+}
+
+private fun <T : Any> processSuccessfulResponse(response: Response<T>): HttpResult<T> {
+    val body = response.body()
+    return if (body == null) {
+        HttpResult.Error(
+            NetworkError(
+                response.code(), response.message(),
+                NullPointerException("Response body is null")
+            )
+        )
+    } else {
+        HttpResult.Okay(body, response.raw())
     }
 }
 
@@ -106,9 +112,7 @@ fun <T : Any> CoroutineLifecycleCall<T>.awaitTimeout(
         if (httpResultCallback.delayMillis > 0) {
             delay(httpResultCallback.delayMillis)
         }
-        suspendAwaitTimeout(timeoutMillis).let { result ->
-            dispatchHttpResult(httpResultCallback, result)
-        }
+        dispatchHttpResult(httpResultCallback, suspendAwaitTimeout(timeoutMillis))
     }
     job.invokeOnCompletion { throwable ->
         httpResultCallback.complete?.let { complete ->

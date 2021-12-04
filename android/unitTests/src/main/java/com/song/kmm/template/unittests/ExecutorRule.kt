@@ -7,6 +7,7 @@ import org.junit.runner.Description
  *  @author HelloWorld
  *  ExecutorRule
  */
+@Suppress("unused")
 class ExecutorRule : TestWatcher() {
 
     override fun starting(description: Description?) {

@@ -11,12 +11,12 @@ import java.lang.reflect.Method
 
 /**
  * @author HelloWorld
- * DemoRobolectricTestRunner
+ * HelloRobolectricTestRunner
  */
 class HelloRobolectricTestRunner(testClass: Class<*>?) : RobolectricTestRunner(testClass) {
 
     companion object {
-        private const val DEFAULT_SDK = 28
+        private const val DEFAULT_SDK = 31
     }
 
     override fun buildGlobalConfig(): Config {
@@ -30,7 +30,7 @@ class HelloRobolectricTestRunner(testClass: Class<*>?) : RobolectricTestRunner(t
         return BaseTestLifecycle::class.java
     }
 
-    class BaseTestLifecycle: DefaultTestLifecycle() {
+    class BaseTestLifecycle : DefaultTestLifecycle() {
         @CallSuper
         override fun beforeTest(method: Method?) {
             ShadowLog.stream = System.out
